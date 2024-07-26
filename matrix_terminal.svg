@@ -1,4 +1,4 @@
-<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="250" xmlns="http://www.w3.org/2000/svg">
   <style>
     .line {
       font-family: "Courier New", Courier, monospace;
@@ -8,26 +8,51 @@
       overflow: hidden;
     }
     .cursor {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 24px;
+      fill: #00FF00;
       animation: blink 1s step-end infinite;
     }
     @keyframes blink {
       from, to { opacity: 1; }
       50% { opacity: 0; }
     }
-    @keyframes type {
+    @keyframes type1 {
       from { width: 0; }
-      to { width: 100%; }
+      to { width: 13ch; }
+    }
+    @keyframes type2 {
+      from { width: 0; }
+      to { width: 19ch; }
+    }
+    @keyframes type3 {
+      from { width: 0; }
+      to { width: 25ch; }
+    }
+    @keyframes type4 {
+      from { width: 0; }
+      to { width: 18ch; }
     }
     .typing1 { 
-      width: 0; 
-      animation: type 2s steps(20, end) 1s 1 normal both, blink 1s step-end infinite;
+      width: 13ch; 
+      animation: type1 3s steps(13) 1s 1 normal both, blink 1s step-end infinite;
     }
     .typing2 { 
-      width: 0; 
-      animation: type 2s steps(20, end) 4s 1 normal both, blink 1s step-end infinite;
+      width: 19ch; 
+      animation: type2 4s steps(19) 5s 1 normal both, blink 1s step-end infinite;
+    }
+    .typing3 { 
+      width: 25ch; 
+      animation: type3 5s steps(25) 10s 1 normal both, blink 1s step-end infinite;
+    }
+    .typing4 { 
+      width: 18ch; 
+      animation: type4 3s steps(18) 15s 1 normal both, blink 1s step-end infinite;
     }
   </style>
   <rect width="100%" height="100%" fill="black"/>
   <text x="20" y="40" class="line typing1">Wake up, Neo...<tspan class="cursor">|</tspan></text>
   <text x="20" y="80" class="line typing2">The Matrix has you...<tspan class="cursor">|</tspan></text>
+  <text x="20" y="120" class="line typing3">Follow the white rabbit.<tspan class="cursor">|</tspan></text>
+  <text x="20" y="160" class="line typing4">Knock, knock, Neo.<tspan class="cursor">|</tspan></text>
 </svg>
