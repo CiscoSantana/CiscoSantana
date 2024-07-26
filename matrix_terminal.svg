@@ -1,35 +1,33 @@
-<!-- matrix_terminal.svg -->
-
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
   <style>
+    .line {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 24px;
+      fill: #00FF00;
+      white-space: pre;
+      overflow: hidden;
+    }
+    .cursor {
+      animation: blink 1s step-end infinite;
+    }
     @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50.01%, 100% { opacity: 0; }
+      from, to { opacity: 1; }
+      50% { opacity: 0; }
     }
     @keyframes type {
       from { width: 0; }
       to { width: 100%; }
     }
-    .line {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 24px;
-      fill: #00FF00;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: .15em solid #00FF00;
+    .typing1 { 
+      width: 0; 
+      animation: type 2s steps(20, end) 1s 1 normal both, blink 1s step-end infinite;
     }
-    .typing1 { animation: type 3s steps(30, end); }
-    .typing2 { animation: type 3s steps(30, end) 3s; }
-    .typing3 { animation: type 3s steps(30, end) 6s; }
-    .typing4 { animation: type 3s steps(30, end) 9s; }
-    .cursor {
-      border-right: .15em solid #00FF00;
-      animation: blink 1s step-end infinite;
+    .typing2 { 
+      width: 0; 
+      animation: type 2s steps(20, end) 4s 1 normal both, blink 1s step-end infinite;
     }
   </style>
   <rect width="100%" height="100%" fill="black"/>
-  <text x="20" y="40" class="line typing1">Wake up, Neo...<tspan class="cursor" x="200" y="40"/></text>
-  <text x="20" y="80" class="line typing2">The Matrix has you...<tspan class="cursor" x="260" y="80"/></text>
-  <text x="20" y="120" class="line typing3">Follow the white rabbit.<tspan class="cursor" x="300" y="120"/></text>
-  <text x="20" y="160" class="line typing4">Knock, knock, Neo.<tspan class="cursor" x="240" y="160"/></text>
+  <text x="20" y="40" class="line typing1">Wake up, Neo...<tspan class="cursor">|</tspan></text>
+  <text x="20" y="80" class="line typing2">The Matrix has you...<tspan class="cursor">|</tspan></text>
 </svg>
